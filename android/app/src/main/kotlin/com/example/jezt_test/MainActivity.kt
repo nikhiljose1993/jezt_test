@@ -1,0 +1,5 @@
+package com.example.jezt_test
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
