@@ -22,22 +22,22 @@ class MovieWidget extends StatelessWidget {
       margin: const EdgeInsets.only(top: 8),
       child: Column(
         children: [
-          Container(
-            height: 250,
-            width: 180,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            margin: const EdgeInsets.all(2),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: AspectRatio(
-                aspectRatio: 9 / 16,
-                child: Image.network(
-                  movie.poster,
-                  fit: BoxFit.cover,
-                  alignment: Alignment.center,
-                  semanticLabel: movie.title,
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              margin: const EdgeInsets.all(2),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: AspectRatio(
+                  aspectRatio: 9 / 14,
+                  child: Image.network(
+                    movie.poster,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                    semanticLabel: movie.title,
+                  ),
                 ),
               ),
             ),

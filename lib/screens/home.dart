@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     return const Column(
       children: [
         SizedBox(
-          height: 240,
+          height: 250,
           child: WeatherScreen(),
         ),
       ],

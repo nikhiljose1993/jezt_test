@@ -1,6 +1,6 @@
 {
-    "name": "jezt_test",
-    "short_name": "jezt_test",
+    "name": "jezt",
+    "short_name": "jezt",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,4 +1,4 @@
-package com.example.jezt_test
+package com.example.jezt
 
 import io.flutter.embedding.android.FlutterActivity
 

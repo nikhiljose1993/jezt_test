@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData().copyWith(
           colorScheme: ColorScheme.fromSeed(
-              seedColor: Color.fromARGB(255, 65, 135, 255),
-              secondary: Color.fromARGB(255, 51, 52, 56)),
+              seedColor: const Color.fromARGB(255, 65, 135, 255),
+              secondary: const Color.fromARGB(255, 51, 52, 56)),
         ),
         home: const TabsScreen(),
       ),

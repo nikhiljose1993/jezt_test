@@ -10,7 +10,7 @@ class MovieDataNotifier extends StateNotifier<List<Movie>> {
   Future<String> fetchMovies(String searchString) async {
     final apiKey = dotenv.env['MOVIE_API_KEY'];
 
-    late var response;
+    late http.Response response;
 
     try {
       response = await http.get(

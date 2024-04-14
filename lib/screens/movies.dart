@@ -18,7 +18,7 @@ class MovieScreen extends ConsumerStatefulWidget {
 class _MovieScreenState extends ConsumerState<MovieScreen> {
   bool _isLoading = false;
   bool _notResult = false;
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   Future<void> _fetchMovieData(String str) async {
     setState(() {
@@ -35,9 +35,28 @@ class _MovieScreenState extends ConsumerState<MovieScreen> {
         setState(() {
           _notResult = true;
         });
-        print(_notResult);
       }
     }
+  }
+
+  int _calculateCrossAxisCount(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    int crossAxisCount;
+
+    if (screenWidth <= 600) {
+      crossAxisCount = 2;
+    } else if (screenWidth <= 900) {
+      crossAxisCount = 3;
+    } else {
+      crossAxisCount = 4;
+    }
+
+    return crossAxisCount;
+  }
+
+  double _calculateChildAspectRatio(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return screenWidth / 700;
   }
 
   @override
@@ -124,24 +143,25 @@ class _MovieScreenState extends ConsumerState<MovieScreen> {
                             direction: ShimmerDirection.ltr,
                             child: GridView.builder(
                               gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount:
+                                    _calculateCrossAxisCount(context),
                                 crossAxisSpacing: 8.0,
                                 mainAxisSpacing: 8.0,
-                                childAspectRatio: 0.5,
+                                childAspectRatio:
+                                    _calculateChildAspectRatio(context),
                               ),
                               itemBuilder: (context, index) =>
                                   const MovieSkelton(),
                             ),
                           )
                         : GridView.builder(
-                            shrinkWrap: true,
                             gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 8.0,
-                              childAspectRatio: 0.6,
-                            ),
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount:
+                                        _calculateCrossAxisCount(context),
+                                    crossAxisSpacing: 8.0,
+                                    childAspectRatio: 9 / 16),
                             itemCount: movies.length,
                             itemBuilder: (context, index) {
                               return MovieWidget(movies[index]);

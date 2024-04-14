@@ -61,7 +61,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
           boxShadow: [
             BoxShadow(
               blurRadius: 10,
-              color: Color.fromARGB(255, 0, 0, 0).withOpacity(.1),
+              color: const Color.fromARGB(255, 0, 0, 0).withOpacity(.1),
             )
           ],
         ),
