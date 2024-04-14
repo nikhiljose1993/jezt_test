@@ -13,18 +13,14 @@ class MovieSkelton extends StatelessWidget {
       padding: const EdgeInsets.all(4),
       child: Column(
         children: [
-          Container(
-            height: 240,
-            width: 180,
-            margin: const EdgeInsets.only(
-              bottom: 11,
-              top: 6,
-              left: 6,
-              right: 6,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              color: Colors.white,
+          Expanded(
+            child: Container(
+              margin:
+                  const EdgeInsets.only(bottom: 11, top: 6, left: 6, right: 6),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.white,
+              ),
             ),
           ),
           Container(
